@@ -67,8 +67,13 @@
         modules[key] = bundle[key];
       }
     }
-  }
+  };
+
+  var clean = function(name) {
+    delete cache[name];
+  };
 
   globals.require = require;
   globals.require.define = define;
+  globals.require.clean = clean;
 })();
